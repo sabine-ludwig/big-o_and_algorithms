@@ -45,6 +45,7 @@ def repeated_names(list):
         if name not in new_list:
             new_list.append(name)
 
+# if len(new_list) != len(list) would also work here
     if new_list != list:
         are_there_repeats = True
     return are_there_repeats    
@@ -77,10 +78,24 @@ def sort_list(list):
 
     return sorted_list    
 
-nums = [1,2,4,2,6,4,7,8]
-print(sort_list(nums))       
+# nums = [1,2,4,2,6,4,7,8]
+# print(sort_list(nums))       
         
-  
+def alternate_sort_list(list):
+    for j in range(len(list) - 1):
+        for i in range(len(list) - 1):
+            current_num = list[i]
+            next_num = list[i + 1]
+            if current_num > next_num:
+                list[i] = next_num 
+                list[i + 1] = current_num
+    
+    return list
+
+# comparisons - < or >
+# index numbers - specific positions of these values 
+# loop utilizing range()
+
 
 
 
